@@ -10,3 +10,4 @@ describe('Login form', () => {
         await expect(browser).toHaveUrlContaining('dashboard');
     });
 });
+
