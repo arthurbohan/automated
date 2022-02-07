@@ -1,8 +1,8 @@
 class GetbuttonPage {
-    async checkUrl(){
+    async checkUrl() {
         await expect(browser).toHaveUrlContaining('demo/get-the-button');
     }
-    async clickRemindMeLater(){
+    async clickRemindMeLater() {
         await $('button[data-alooma-element="remind_me_later"]').click();
     }
 }

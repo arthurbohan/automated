@@ -1,5 +1,5 @@
 class DashboardPage {
-    async checkUrl(){
+    async checkUrl() {
         await expect(browser).toHaveUrlContaining('dashboard');
     }
 }

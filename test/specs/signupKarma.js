@@ -1,6 +1,6 @@
 import dashboardPage from '../pages/dashboardPage';
 import getbuttonPage from '../pages/getbuttonPage';
-import {getCred} from '../helpers/helper';
+import { getCred } from '../helpers/helper';
 import loginPage from '../pages/loginPage';
 import mainPage from '../pages/mainPage';
 import singupPage from '../pages/singupPage';
