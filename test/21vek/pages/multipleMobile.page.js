@@ -1,5 +1,4 @@
 class MultipleMobilePage {
-
     get mobileType() {
         return $("//ul[contains(@class, 'b-recipes__items')]//a[contains(@href, 'iphone_13')]");
     }
