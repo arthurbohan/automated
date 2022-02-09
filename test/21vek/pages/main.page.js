@@ -18,6 +18,5 @@ class MainPage {
     async openCartBox() {
         await this.cartBox.click();
     }
-
 }
 export default new MainPage();
