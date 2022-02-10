@@ -19,7 +19,20 @@ function getDeliveryData() {
     return deliveryData;
 }
 
+function getOrgData() {
+    const orgData = {
+        unp: '123123123',
+        name: 'name',
+        addr: 'addr',
+        rs: '123123123123123123123123123A',
+        bank: 'bank',
+        bank_code: '123123123A'
+    }
+    return orgData;
+}
+
 export {
     getUserData,
-    getDeliveryData
+    getDeliveryData,
+    getOrgData
 };

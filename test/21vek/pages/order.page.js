@@ -3,6 +3,10 @@ class OrderPage {
         return $("//button[contains(@class, 'cr-button__order')]");
     }
 
+    get basketServices() {
+        return $$(".cr-basket__services");
+    }
+
     get nameField() {
         return $("input[name='data[private][name]'");
     }
@@ -51,12 +55,55 @@ class OrderPage {
         return $$("#j-offer_spots-list .j-offer_spot_address");
     }
 
+    get basketServices() {
+        return $$(".cr-basket__services");
+    }
+
+    get orderPaymentButtons() {
+        return $$(".order-payment_group");
+    }
+
+    get forOrgButton() {
+        return $('label.g-form__checklabel.g-form__radio #no_cash').parentElement();
+    }
+
+    get unpField() {
+        return $('#j-legal-entity_unp');
+    }
+
+    get orgNameField() {
+        return $("input[name='data[org][org]']");
+    }
+
+    get orgAddrField() {
+        return $("input[name='data[org][address]']");
+    }
+
+    get orgRsField() {
+        return $("input[name='data[org][rs]']");
+    }
+
+    get orgBankField() {
+        return $("input[name='data[org][bank]']");
+    }
+
+    get orgBankCodeField() {
+        return $("input[name='data[org][bank_code]']");
+    }
+
     async clickCheckoutButton() {
         await this.checkoutButton.click();
     }
 
     async clickSelfDeliveryTypeButton() {
         await this.selfDeliveryTypeButton.click();
+    }
+
+    async clickToBasketServicesButtons() {
+        const services = await this.basketServices;
+        await services.forEach((label) => {
+            label.click();
+        });
     }
 
     async clickToPickUpPointButtons() {
@@ -83,6 +130,26 @@ class OrderPage {
         await this.entranceField.setValue(entrance);
         await this.floorField.setValue(floor);
         await this.flatField.setValue(flat);
+    }
+
+    async clickToPaymentOrderButtons() {
+        const orderButtons = await this.orderPaymentButtons;
+        await orderButtons.forEach((label) => {
+            label.click();
+        });
+    }
+
+    async clickToForOrgButton() {
+        await this.forOrgButton.click();
+    }
+
+    async inputOrgData(unpm, name, addr, rs, bank, bank_code) {
+        await this.unpField.setValue(unpm);
+        await this.orgNameField.setValue(name);
+        await this.orgAddrField.setValue(addr);
+        await this.orgRsField.setValue(rs);
+        await this.orgBankField.setValue(bank);
+        await this.orgBankCodeField.setValue(bank_code);
     }
 }
 export default new OrderPage();
