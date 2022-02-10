@@ -16,6 +16,7 @@ class MainPage {
     };
 
     async openCartBox() {
+        await $('[data-testid="header-count"]').waitForExist(5000);
         await this.cartBox.click();
     }
 }

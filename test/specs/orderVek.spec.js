@@ -12,9 +12,7 @@ describe('Order', () => {
         await multipleMobilePage.choseMobileType();
         await multipleMobilePage.choseMobile();
         await singleMobilePage.clickAddToCartButton();
-        await delay(2000);
         await mainPage.openCartBox();
-        await delay(2000);
         await orderPage.clickCheckoutButton();
         await orderPage.clickToBasketServicesButtons();
         await orderPage.clickSelfDeliveryTypeButton();

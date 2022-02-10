@@ -63,8 +63,8 @@ class OrderPage {
         return $$(".order-payment_group");
     }
 
-    get forOrgButton() {
-        return $('label.g-form__checklabel.g-form__radio #no_cash').parentElement();
+    async getForOrgButton() {
+        return await $('label.g-form__checklabel.g-form__radio #no_cash').parentElement();
     }
 
     get unpField() {
@@ -92,6 +92,7 @@ class OrderPage {
     }
 
     async clickCheckoutButton() {
+        await this.checkoutButton.waitForExist(5000);
         await this.checkoutButton.click();
     }
 
@@ -140,7 +141,8 @@ class OrderPage {
     }
 
     async clickToForOrgButton() {
-        await this.forOrgButton.click();
+        const button = await this.getForOrgButton();
+        await button.click();
     }
 
     async inputOrgData(unpm, name, addr, rs, bank, bank_code) {
