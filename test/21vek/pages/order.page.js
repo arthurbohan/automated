@@ -102,15 +102,15 @@ class OrderPage {
 
     async clickToBasketServicesButtons() {
         const services = await this.basketServices;
-        await services.forEach((label) => {
-            label.click();
+        services.forEach(async (label) => {
+            await label.click();
         });
     }
 
     async clickToPickUpPointButtons() {
         const pickUpButtons = await this.pickUpPointButtons;
-        await pickUpButtons.forEach((input) => {
-            input.click();
+        pickUpButtons.forEach(async (input) => {
+            await input.click();
         });
     }
 
@@ -135,8 +135,8 @@ class OrderPage {
 
     async clickToPaymentOrderButtons() {
         const orderButtons = await this.orderPaymentButtons;
-        await orderButtons.forEach((label) => {
-            label.click();
+        orderButtons.forEach(async (label) => {
+            await label.click();
         });
     }
 
