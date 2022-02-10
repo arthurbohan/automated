@@ -3,6 +3,7 @@ const { default: multipleMobilePage } = require("../21vek/pages/multipleMobile.p
 const { default: orderPage } = require("../21vek/pages/order.page");
 const { default: singleMobilePage } = require("../21vek/pages/singleMobile.page");
 const { getUserData, getDeliveryData, getOrgData } = require("../helpers/order.helper");
+const { delay } = require("../helpers/delayHelper");
 
 describe('Order', () => {
     it('Should order phone', async () => {
@@ -11,7 +12,9 @@ describe('Order', () => {
         await multipleMobilePage.choseMobileType();
         await multipleMobilePage.choseMobile();
         await singleMobilePage.clickAddToCartButton();
+        await delay(2000);
         await mainPage.openCartBox();
+        await delay(2000);
         await orderPage.clickCheckoutButton();
         await orderPage.clickToBasketServicesButtons();
         await orderPage.clickSelfDeliveryTypeButton();
