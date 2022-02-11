@@ -1,2 +1,1 @@
-# automated
-Automation software testing
+Learning automation software testing
